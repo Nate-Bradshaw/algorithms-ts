@@ -3,8 +3,7 @@ from math import floor
 from src.search import NO_MATCH, StrOrInt
 
 
-def linearSearch(items: List[StrOrInt],
-                 itemToFind: StrOrInt) -> int:
+def linearSearch(items: List[StrOrInt], itemToFind: StrOrInt) -> int:
     """
     Searches through a list by comparing every item to the criteria.
     """
