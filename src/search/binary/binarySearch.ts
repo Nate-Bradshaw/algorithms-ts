@@ -28,8 +28,12 @@ const binarySearch = (items: any[], item: any): number => {
             low = mid + 1;
         }
     }
-
-    return NO_MATCH;
+    if (result == -1){
+        return NO_MATCH;
+    }
+    else{
+        return result;
+    }
 }
 
 export default binarySearch;
