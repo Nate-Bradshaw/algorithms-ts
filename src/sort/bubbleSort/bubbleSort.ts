@@ -26,36 +26,3 @@ const bubbleSort: SortAlgorithm<any> = <T>(items: T[]): T[] => {
 
 export default bubbleSort;
 
-
-
-/*
-import { SortAlgorithm } from "../common";
-import swap from "../swap";
-
-const bubbleSort: SortAlgorithm<any> = <T>(items: T[]): T[] => {
-
-    //const arraySize: number = items.length;
-    for (let i = 0; i < (items.length - 1); i++) {
-
-        let swapMade: boolean = false;
-        for (let j = 0; j < (items.length - i - 1); j++) {
-            if (items[j] > items[j + 1]) {
-                swapMade = true;
-                swap(items, j, j + 1);
-
-            }
-
-        }
-
-        if (!swapMade) {
-            break;
-
-        }
-
-    }
-    return items;
-
-}
-
-export default bubbleSort;
-*/
