@@ -28,7 +28,7 @@ const Merge = <T>(input_list: T[], left_pointer: number, right_pointer: number) 
         if(first_half[0] > second_half[0]){
             
             let item = second_half.shift();
-            if (!!item) output_list.push(item)
+            if (item !== undefined) output_list.push(item)
             
            //output_list.push(second_half.shift());
 
@@ -36,7 +36,7 @@ const Merge = <T>(input_list: T[], left_pointer: number, right_pointer: number) 
         }
         else{
             let item = first_half.shift();
-            if (!!item) output_list.push(item)
+            if (item !== undefined) output_list.push(item)
             //output_list.push(first_half.pop());
         }
     }
