@@ -8,16 +8,17 @@ const mergeSort: SortAlgorithm<any> = <T>(items: T[]): T[] => {
 
     //Merge(items, 0, items.length - 1);
 
-    return Merge(items, 0, items.length - 1); //???
+    return Merge<T>(items, 0, items.length - 1); //???
     //return items;
 }
 
-function Merge<T>(input_list: T[], left_pointer: number, right_pointer: number): T[]{
+//function Merge<T>(input_list: T[], left_pointer: number, right_pointer: number): T[]{
+const Merge = <T>(input_list: T[], left_pointer: number, right_pointer: number) => {
     if(left_pointer == right_pointer){
         return [input_list[left_pointer]];
     }
 
-    let middle = Math.floor((left_pointer + right_pointer) / 2);
+    let middle: number = Math.floor((left_pointer + right_pointer) / 2);
 
     let first_half: T[] = Merge(input_list, left_pointer, middle)
     let second_half: T[] = Merge(input_list, middle + 1, right_pointer);
@@ -25,13 +26,16 @@ function Merge<T>(input_list: T[], left_pointer: number, right_pointer: number):
     let output_list: T[] = [];
     while(first_half.length > 0 && second_half.length > 0){
         if(first_half[0] > second_half[0]){
+            
             let item = second_half.shift();
-            if (!!item) output_list.unshift(item)
+            if (!!item) output_list.push(item)
+            
+           //output_list.push(second_half.shift());
 
             //output_list.push(second_half.pop());
         }
         else{
-            let item = second_half.pop();
+            let item = first_half.shift();
             if (!!item) output_list.push(item)
             //output_list.push(first_half.pop());
         }
